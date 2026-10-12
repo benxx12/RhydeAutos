@@ -46,8 +46,11 @@ function AboutPage({ onNavigate }) {
           </div>
           <div className="relative min-h-[240px] bg-[#e5e9df] md:min-h-[370px]">
             <img
-              alt=""
-              className="h-[clamp(240px,68vw,350px)] w-full border-0 object-cover md:h-[370px] [&:not([src])]:invisible"
+              src="/images/showroom.jpg"
+              alt="Cars displayed at a dealership showroom"
+              className="h-[clamp(240px,68vw,350px)] w-full border-0 object-cover md:h-[370px]"
+              loading="lazy"
+              decoding="async"
             />
             <span className="absolute bottom-3 right-2.5 bg-white px-5 py-4 text-[11px] font-bold shadow-[0_14px_40px_rgba(23,25,22,0.09)] md:bottom-[22px] md:right-[-18px]">
               Good journeys start with good people.

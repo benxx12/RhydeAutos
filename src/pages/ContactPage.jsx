@@ -42,7 +42,7 @@ function ContactPage({ onNavigate }) {
 
       <section className="py-[58px] md:py-[82px]">
         <div className={`${containerClass} grid gap-7 md:grid-cols-[1.1fr_.9fr] md:gap-[10%]`}>
-          <div>
+          <div className="min-w-0">
             <span className={eyebrowClass}>Get in touch</span>
             <h2 className="mb-5 mt-[14px] font-heading text-[clamp(30px,4vw,43px)] font-semibold leading-[1.1] tracking-[-.055em] md:mb-[26px]">
               Good conversations start here.
@@ -50,16 +50,16 @@ function ContactPage({ onNavigate }) {
             <div className="grid gap-3">
               {contactOptions.map((option) => (
                 <a
-                  className="group flex min-h-[100px] items-center gap-4 border border-line p-[18px] transition hover:-translate-y-0.5 hover:border-[#b5c49e]"
+                  className="group flex min-h-[100px] min-w-0 items-center gap-4 border border-line p-[18px] transition hover:-translate-y-0.5 hover:border-[#b5c49e]"
                   href={option.href}
                   key={option.label}
                 >
                   <span className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full bg-[#f1f4eb] text-[17px]" aria-hidden="true">
                     {option.icon}
                   </span>
-                  <span className="grid gap-1">
+                  <span className="grid min-w-0 gap-1">
                     <span className="text-[10px] text-muted">{option.label}</span>
-                    <strong className="text-sm">{option.value}</strong>
+                    <strong className="break-words text-sm">{option.value}</strong>
                     <small className="text-[10px] text-muted">{option.note}</small>
                   </span>
                   <span className="ml-auto text-base transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true">↗</span>

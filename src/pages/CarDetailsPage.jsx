@@ -20,6 +20,14 @@ const textLinkClass = 'inline-flex items-center gap-2.5 text-[13px] font-bold';
 function CarDetailsPage({ car, onNavigate }) {
   const { cars } = useCars();
   const similarCars = cars.filter((item) => item.id !== car.id).slice(0, 3);
+  const additionalImages = [
+    { src: car.rearImage, label: 'Rear view', alt: `${car.name} rear view` },
+    {
+      src: car.interiorImage,
+      label: 'Interior',
+      alt: `${car.name} interior`,
+    },
+  ].filter((image) => image.src);
   const specs = [
     ['Year', car.year],
     ['Mileage', car.mileage],
@@ -45,9 +53,35 @@ function CarDetailsPage({ car, onNavigate }) {
             <span>{car.name}</span>
           </div>
           <div className="grid grid-cols-1 items-start gap-7 min-[721px]:grid-cols-[minmax(0,1.3fr)_minmax(310px,.7fr)] min-[721px]:gap-9 min-[1001px]:gap-[58px]">
-            <div className="relative min-h-[250px] overflow-hidden bg-[#e7eae2] md:min-h-[390px]">
-              <img alt="" className="h-[clamp(250px,68vw,380px)] w-full border-0 object-cover md:h-[390px] [&:not([src])]:invisible" />
-              <span className="absolute left-[15px] top-[15px] rounded-sm bg-white px-[10px] py-[7px] text-[9px] font-bold uppercase tracking-[.06em]">{car.badge}</span>
+            <div className="grid gap-3">
+              <div className="relative min-h-[250px] overflow-hidden bg-[#e7eae2] md:min-h-[390px]">
+                <img
+                  src={car.image}
+                  alt={`${car.name} exterior`}
+                  className="h-[clamp(250px,68vw,380px)] w-full border-0 object-cover md:h-[390px]"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="absolute left-[15px] top-[15px] rounded-sm bg-white px-[10px] py-[7px] text-[9px] font-bold uppercase tracking-[.06em]">{car.badge}</span>
+              </div>
+              {additionalImages.length > 0 && (
+                <div className="grid grid-cols-2 gap-3">
+                  {additionalImages.map((image) => (
+                    <figure className="relative m-0 min-w-0 overflow-hidden bg-[#e7eae2]" key={image.label}>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="h-[clamp(120px,20vw,185px)] w-full border-0 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <figcaption className="absolute bottom-2 left-2 rounded-sm bg-white/95 px-2.5 py-1.5 text-[10px] font-bold">
+                        {image.label}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="pt-0 md:pt-2">
               <span className={eyebrowClass}>{car.year} · {car.body}</span>

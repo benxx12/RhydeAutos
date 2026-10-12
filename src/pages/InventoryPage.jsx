@@ -104,6 +104,8 @@ function InventoryPage({ onNavigate }) {
             <option>SUV</option>
             <option>Sedan</option>
             <option>Coupe</option>
+            <option>Hatchback</option>
+            <option>Minivan</option>
           </select>
           <select
             className={`${filterClass} md:w-auto md:min-w-[165px]`}

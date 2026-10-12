@@ -20,7 +20,13 @@ function CarCard({ car, onNavigate }) {
           onNavigate(href);
         }}
       >
-        <img alt="" className="h-full w-full border-0 object-cover [&:not([src])]:invisible" />
+        <img
+          src={car.image}
+          alt={`${car.year} ${car.name}`}
+          className="h-full w-full border-0 object-cover"
+          loading="lazy"
+          decoding="async"
+        />
         <span className="absolute left-[15px] top-[15px] rounded-sm bg-white px-[10px] py-[7px] text-[9px] font-bold uppercase tracking-[.06em]">{car.badge}</span>
       </a>
       <div className="p-5">
