@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Tailwind CSS
+
+Tailwind CSS is configured to scan files in `src/` for utility classes. Add Tailwind utility classes to your React components and styles; the existing `src/index.css` includes Tailwind's base, component, and utility layers.
+
+## Vehicle inventory
+
+The home page highlights three vehicles. The full collection is available at `/inventory`, with search, body-style filters, sorting, and pagination capped at 15 cars per page. The page count follows the number of vehicles in `src/context/CarsContext.js`.
+
 ## Available Scripts
 
 In the project directory, you can run:
