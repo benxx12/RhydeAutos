@@ -1,10 +1,11 @@
 const contactOptions = [
   {
     icon: '↗',
-    label: 'Call our team',
+    label: 'WhatsApp us',
     value: '09165293766',
-    href: 'tel:+2349165293766',
+    href: 'https://wa.me/2349165293766?text=Hi%2C%20I%27d%20like%20to%20get%20in%20touch%20with%20RhydeHaus.',
     note: 'Mon – Sat, 9am – 6pm',
+    external: true,
   },
   {
     icon: '✉',
@@ -53,6 +54,8 @@ function ContactPage({ onNavigate }) {
                   className="group flex min-h-[100px] min-w-0 items-center gap-4 border border-line p-[18px] transition hover:-translate-y-0.5 hover:border-[#b5c49e]"
                   href={option.href}
                   key={option.label}
+                  target={option.external ? '_blank' : undefined}
+                  rel={option.external ? 'noopener noreferrer' : undefined}
                 >
                   <span className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-full bg-[#f1f4eb] text-[17px]" aria-hidden="true">
                     {option.icon}

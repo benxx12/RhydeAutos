@@ -67,7 +67,7 @@ function Header({ onNavigate, pathname }) {
           </a>
         </nav>
         <div className="flex items-center gap-2.5 md:gap-5">
-          <a className="hidden whitespace-nowrap text-xs font-bold min-[1001px]:block" href="tel:+2349165293766">
+          <a className="hidden whitespace-nowrap text-xs font-bold min-[1001px]:block" href="https://wa.me/2349165293766" target="_blank" rel="noopener noreferrer">
             09165293766
           </a>
           <a

@@ -40,7 +40,7 @@ function Footer({ onNavigate }) {
         </div>
         <div>
           <h3 className="mb-[18px] mt-0.5 text-[11px] font-bold uppercase tracking-[.04em]">Get in touch</h3>
-          <a className="mt-3 block w-fit text-[11px] leading-[1.6] text-muted hover:text-ink" href="tel:+2349165293766">09165293766</a>
+          <a className="mt-3 block w-fit text-[11px] leading-[1.6] text-muted hover:text-ink" href="https://wa.me/2349165293766" target="_blank" rel="noopener noreferrer">09165293766</a>
           <a className="mt-3 block w-fit max-w-full break-words text-[11px] leading-[1.6] text-muted hover:text-ink" href="mailto:RhydehausGlobal@gmail.com">RhydehausGlobal@gmail.com</a>
           <span className="mt-3 block w-fit text-[11px] leading-[1.6] text-muted">Mon – Sat, 9am – 6pm</span>
         </div>

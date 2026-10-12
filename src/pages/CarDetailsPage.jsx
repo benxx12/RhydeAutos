@@ -95,8 +95,8 @@ function CarDetailsPage({ car, onNavigate }) {
                 <a className={`group ${buttonClass} w-full bg-ink text-white hover:bg-[#30352d]`} href={`mailto:RhydehausGlobal@gmail.com?subject=${encodeURIComponent(`I'm interested in the ${car.name}`)}`}>
                   Ask us about this car <span className="transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true">↗</span>
                 </a>
-                <a className={`${buttonClass} w-full border-line bg-transparent hover:border-ink hover:bg-transparent`} href="tel:+2349165293766">
-                  Call 09165293766
+                <a className={`${buttonClass} w-full border-line bg-transparent hover:border-ink hover:bg-transparent`} href={`https://wa.me/2349165293766?text=${encodeURIComponent(`Hi, I'm interested in the ${car.name}`)}`} target="_blank" rel="noopener noreferrer">
+                  WhatsApp 09165293766
                 </a>
               </div>
               <p className="mt-[22px] flex gap-2.5 text-[11px] leading-[1.6] text-muted">
